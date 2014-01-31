@@ -7,11 +7,7 @@
 // @copyright    2013+, Daniel Husar
 // ==/UserScript==
 
+$.fn.lazyload = null;
 $('.lazy').each(function(){
-  $(this).attr('src', $(this).data('original'));
+  $(this).attr('src', $(this).data('original')).removeAttr('data-original');
 });
-$(window).off('resize');
-
-setTimeout(function(){
-    $(window).off('resize');
-}, 3000);
